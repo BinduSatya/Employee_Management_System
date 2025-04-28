@@ -1,9 +1,12 @@
-const Tasklist = () => {
+import AcceptTask from "./AcceptTask";
+
+const Tasklist = ({ data }) => {
   return (
     <div
       id="tasklist"
       className=" h-[45%] overflow-x-auto w-full mt-10 flex items-center flex-nowrap gap-5 justify-start"
     >
+      <AcceptTask />
       <div
         id="task"
         className="h-[90%] flex-shrink-0 px-3 py-2 w-[20%] bg-red-500 rounded-xl overflow-y-auto"
