@@ -1,0 +1,217 @@
+const employees = [
+  {
+    id: 1,
+    email: "employee1@exp.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Design Login Page",
+        description:
+          "Create the UI for the login page based on the new mockups.",
+        date: "2025-04-05",
+        category: "Design",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Write Unit Tests",
+        description: "Write unit tests for the authentication module.",
+        date: "2025-04-02",
+        category: "Testing",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Prepare Documentation",
+        description: "Document the API endpoints used in the project.",
+        date: "2025-04-10",
+        category: "Documentation",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+  {
+    id: 2,
+    email: "employee2@exp.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Research Payment Gateway",
+        description: "Explore different payment gateway APIs for integration.",
+        date: "2025-04-12",
+        category: "Research",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Backend API Development",
+        description: "Develop the APIs for user management and authentication.",
+        date: "2025-03-25",
+        category: "Development",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+    ],
+  },
+  {
+    id: 3,
+    email: "employee3@exp.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Fix UI Bugs",
+        description: "Resolve all UI bugs reported by QA team.",
+        date: "2025-04-07",
+        category: "Development",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Performance Testing",
+        description: "Conduct load testing on the user login feature.",
+        date: "2025-04-04",
+        category: "Testing",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Redesign Home Page",
+        description:
+          "Propose and implement improvements to the home page layout.",
+        date: "2025-04-09",
+        category: "Design",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+      {
+        title: "Technical Research",
+        description: "Study caching techniques to improve app performance.",
+        date: "2025-04-06",
+        category: "Research",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+  },
+  {
+    id: 4,
+    email: "employee4@exp.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Database Schema Design",
+        description: "Design the database schema for new features.",
+        date: "2025-03-28",
+        category: "Development",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Bug Report Analysis",
+        description: "Analyze incoming bug reports and categorize them.",
+        date: "2025-04-01",
+        category: "Testing",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Create Style Guide",
+        description: "Develop a style guide for frontend components.",
+        date: "2025-04-03",
+        category: "Design",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+  {
+    id: 5,
+    email: "employee5@exp.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Set Up CI/CD Pipeline",
+        description: "Automate build and deployment using GitHub Actions.",
+        date: "2025-03-29",
+        category: "Development",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Code Review",
+        description: "Review code submissions for best practices.",
+        date: "2025-04-05",
+        category: "Testing",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Landing Page Redesign",
+        description: "Redesign the landing page to boost user engagement.",
+        date: "2025-04-08",
+        category: "Design",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+      {
+        title: "Explore Machine Learning APIs",
+        description: "Research ML APIs that can enhance product features.",
+        date: "2025-04-11",
+        category: "Research",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+  },
+];
+
+const admins = [
+  {
+    id: 1,
+    email: "admin1@exp.com",
+    password: "123",
+  },
+];
+
+export const setLocalStorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admins", JSON.stringify(admins));
+};
+export const getLocalStorage = () => {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const admins = JSON.parse(localStorage.getItem("admins"));
+  return { employees, admins };
+};
