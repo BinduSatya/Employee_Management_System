@@ -1,8 +1,9 @@
-const Header = ({ data }) => {
+const Header = ({ data, changeUser }) => {
   const logoutUser = () => {
     console.log("clicking");
     localStorage.removeItem("loggedUser");
-    window.location.reload();
+    // window.location.reload();
+    changeUser("");
   };
   console.log(data);
   return (

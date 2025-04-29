@@ -19,3 +19,7 @@ body {
 #task::-webkit-scrollbar {
   display: none;
 }
+
+.admin_tasks::-webkit-scrollbar {
+  display: none;
+}
