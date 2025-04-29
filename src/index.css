@@ -12,6 +12,10 @@ body {
   display: none;
 }
 
+#tasklis ::-webkit-scrollbar {
+  display: none;
+}
+
 #task::-webkit-scrollbar {
   display: none;
 }

@@ -1,7 +1,7 @@
 const AllTasks = () => {
   return (
     <div
-      id="tasklist"
+      id="tasklis"
       className="bg-[#1c1c1c] p-3 rounded mt-5 h-30 overflow-auto"
     >
       <div className="bg-red-400 py-2 px-4 mb-2 flex justify-between rounded ">
