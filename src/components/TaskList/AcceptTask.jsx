@@ -1,4 +1,4 @@
-const AcceptTask = ({ task, empdata }) => {
+const wAcceptTask = ({ task, empdata }) => {
   //BLUE
   //   console.log("task accept is", data.task);
   console.log("task", task);

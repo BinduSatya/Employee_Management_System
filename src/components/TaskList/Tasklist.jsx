@@ -11,7 +11,7 @@ const Tasklist = ({ data }) => {
     >
       {data.tasks.map((task, idx) => {
         if (task.active) {
-          return <AcceptTask key={idx} task={task} empdata={data} />;
+          return <AcceptTask key={idx} task={task} data={data} />;
         }
         if (task.completed) {
           return <CompleteTask key={idx} task={task} data={data} />;

@@ -11,13 +11,14 @@ const AllTasks = () => {
         id="tasklis"
         className="bg-[#1c1c1c] p-1 rounded mt-5 h-30 admin_tasks"
       >
-        <div className="bg-red-400 mb-1 py-1 px-4 flex justify-between rounded">
-          <h2 className="w-1/5 bg-red-600">Employee Name</h2>
-          <h2 className="w-1/5 bg-red-600">New Task</h2>
-          <h2 className="w-1/5 bg-red-600">Active Task</h2>
-          <h2 className="w-1/5 bg-red-600">Completed Task</h2>
-          <h2 className="w-1/5 bg-red-600">Failed Task</h2>
+        <div className="bg-pink-600 mb-1 py-1 px-4 flex justify-between rounded">
+          <h2 className="w-1/5">Employee Name</h2>
+          <h2 className="w-1/5">New Task</h2>
+          <h2 className="w-1/5">Active Task</h2>
+          <h2 className="w-1/5">Completed Task</h2>
+          <h2 className="w-1/5">Failed Task</h2>
         </div>
+        
         <div className="overflow-auto">
           {authData.employees.map((emp, idx) => {
             return (

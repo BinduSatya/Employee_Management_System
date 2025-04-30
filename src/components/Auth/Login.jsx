@@ -5,6 +5,8 @@ const Login = ({ handleLogin }) => {
   const [password, setPassword] = useState("");
 
   const submitHandler = (e) => {
+    setEmail("");
+    setPassword("");
     e.preventDefault();
     console.log("Submitted file");
   };
@@ -15,8 +17,6 @@ const Login = ({ handleLogin }) => {
           className="flex flex-col items-center justify-center"
           onSubmit={(e) => {
             handleLogin(email, password);
-            setEmail("");
-            setPassword("");
             return submitHandler(e);
           }}
         >
