@@ -1,4 +1,5 @@
 import { useState } from "react";
+import handleReplacement from "./handleReplacement";
 
 const CreateTask = () => {
   const [title, setTitle] = useState("");
@@ -30,6 +31,7 @@ const CreateTask = () => {
     for (let i = 0; i < emps.length; i++) {
       if (assign == emps[i].firstname) {
         emps[i].tasks.push(task);
+        emps[i].taskCounts.newTask++;
         setTitle("");
         setDate("");
         setAssign("");
@@ -38,11 +40,12 @@ const CreateTask = () => {
         task = {};
         localStorage.removeItem("employees");
         localStorage.setItem("employees", JSON.stringify(emps));
+        // handleReplacement(emps);
         console.log(emps[i]);
       }
     }
 
-    if (task != {}) {
+    if (task != {} && title != "" && date != "") {
       alert(`There is no existing user with name ${assign}`);
     }
   };
@@ -51,9 +54,7 @@ const CreateTask = () => {
     <div className="p-5 bg-[#1C1c1c] mt-7 rounded">
       <form
         className="flex flex-wrap w-full items-start justify-between"
-        onSubmit={(e) => {
-          submitHnadler(e);
-        }}
+        onSubmit={(e) => submitHnadler(e)}
       >
         <div className="w-1/2">
           <div>

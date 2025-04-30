@@ -1,8 +1,9 @@
 const NewTask = ({ task }) => {
+  //YELLOW
   return (
     <div
       id="task"
-      className="h-[90%] flex-shrink-0 px-3 py-2 w-[20%] bg-blue-500 rounded-[3%] overflow-y-auto"
+      className="h-[90%] flex-shrink-0 px-3 py-2 w-[20%] bg-yellow-500 rounded-[3%] overflow-y-auto"
     >
       <div className="flex justify-between item-center">
         <h3 className="text-sm bg-red-800 rounded-sm px-2 py-1">

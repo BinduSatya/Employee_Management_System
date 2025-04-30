@@ -10,25 +10,19 @@ const Tasklist = ({ data }) => {
       className=" h-[45%] overflow-x-auto w-full mt-10 flex items-center flex-nowrap gap-5 justify-start"
     >
       {data.tasks.map((task, idx) => {
-        // console.log("task is", task);
         if (task.active) {
-          return <AcceptTask key={idx} task={task} />;
+          return <AcceptTask key={idx} task={task} empdata={data} />;
         }
         if (task.completed) {
-          return <CompleteTask key={idx} task={task} />;
+          return <CompleteTask key={idx} task={task} data={data} />;
         }
         if (task.newTask) {
-          return <NewTask key={idx} task={task} />;
+          return <NewTask key={idx} task={task} data={data} />;
         }
         if (task.failed) {
-          return <FailedTask key={idx} task={task} />;
+          return <FailedTask key={idx} task={task} data={data} />;
         }
       })}
-
-      {/* <AcceptTask />
-      <NewTask />
-      <FailedTask />
-      <CompleteTask /> */}
     </div>
   );
 };

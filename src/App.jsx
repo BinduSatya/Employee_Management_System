@@ -2,17 +2,17 @@ import { useContext, useEffect, useState } from "react";
 import Login from "./components/Auth/Login";
 import AdminDashboard from "./components/Dashboard/AdminDashboard";
 import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
-import { getLocalStorage, setLocalStorage } from "./utils/localStorage";
 import { AuthContext } from "./context/AuthProvider";
+import { getLocalStorage,setLocalStorage } from "./utils/localStorage";
+// import { setLocalStorage } from "./utils/localStorage";
 
 const App = () => {
-  useEffect(() => {
-    setLocalStorage();
-  });
+//   useEffect(() => {
+//     setLocalStorage();
+//   });
 
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null);
-
   const authData = useContext(AuthContext);
 
   if (authData) {
@@ -38,7 +38,6 @@ const App = () => {
         (e) => e.email == email && e.password == password
       );
       if (admin) {
-        // setUser("admin");
         setLoggedInUserData(admin);
         console.log("This is Admin");
         localStorage.setItem(
@@ -46,18 +45,13 @@ const App = () => {
           JSON.stringify({ role: "admin", data: admin })
         );
       } else if (employee) {
-        if (employee) {
-          //   setUser("employee");
-          setLoggedInUserData(employee);
-          localStorage.setItem(
-            "loggedUser",
-            JSON.stringify({ role: "employee", data: employee })
-          );
-        }
-      } else {
-        alert("Invalid User");
+        setLoggedInUserData(employee);
+        console.log("employee is", employee);
+        localStorage.setItem(
+          "loggedUser",
+          JSON.stringify({ role: "employee", data: employee })
+        );
       }
-      //   loggedInUserData = user;
     } else alert("Invalid User");
   };
 
@@ -70,12 +64,6 @@ const App = () => {
       ) : (
         <EmployeeDashboard data={user.data} changeUser={setUser} />
       )}
-      {/* {user && user.role == "admin" ? <AdminDashboard data={user.data} /> : ""}
-      {user && user.role == "employee" ? (
-        <EmployeeDashboard data={user.data} />
-      ) : (
-        ""
-      )} */}
     </>
   );
 };

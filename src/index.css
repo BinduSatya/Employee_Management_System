@@ -16,10 +16,24 @@ body {
   display: none;
 }
 
-#task::-webkit-scrollbar {
+#tasks::-webkit-scrollbar {
   display: none;
 }
 
 .admin_tasks::-webkit-scrollbar {
   display: none;
+}
+
+button {
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  filter: brightness(110%);
+}
+
+button:active {
+  transform: scale(0.95);
 }
